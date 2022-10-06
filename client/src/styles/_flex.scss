@@ -1,0 +1,52 @@
+@use "./library";
+
+@mixin flex-gap($size) {
+  gap: $size * library.$base-rate + rem;
+}
+
+@for $i from 1 through 4 {
+  .gap-#{$i} {
+    @include flex-gap($i);
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.items-start {
+  align-items: start;
+}
+
+.items-end {
+  align-items: end;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.self-start {
+  align-self: start;
+}
